@@ -1,5 +1,52 @@
 import java.util.Arrays;
 
+/* 
+ *-The problem-
+ *	ACME company has a small office in Caracas, Venezuela. 
+ *	The office has limited rooms/desks, and the manager needs to assign one office to every team.
+ *	The teams cannot be separated, all team members must be working together in the same room.
+ *	You can move desks from a room to another without problems. 
+ *
+ *-Solution-
+ *	public static boolean solutionR(int[] desk, int[] team)
+ *	
+ *	Where "int[] desk" is an array with length > 0, with non-zero values.
+ *	Where "int[] team" is an array with length > 0, with non-zero values.
+ *
+ *	e.g.:
+ *	desk = [2,4,1] (in this case we have 3 rooms, and we have a total of 7 desks)
+ *	team = [3,2,2] (in this case we have 3 teams
+ *					first team with 3 people
+ *					second team with 2 people
+ *					third team with 2 people)
+ *
+ *-My solution-
+ *	In this exercise we are using a recursive method.
+ *
+ *	call#1
+ *	Desk[2, 4, 1]  Team[3, 2, 2]  
+ *	
+ *		Call#2
+ *		Desk[3, 3, 1]  Team[3, 2, 2] <-- moving one desk
+ *	
+ *			Call#3 
+ *			Desk[3, 1]  Team[2, 2] 
+ *	
+ *				Call#4
+ *				Desk[1, 1]  Team[2] 
+ *	
+ *					Call#5
+ *					Desk[2]  Team[2] 
+ *	
+ *						Call#6
+ *						Desk[]  Team[] <-- stop criteria
+ *	
+ *	True, the office has enough space for us!
+ *
+ *
+ *-author-
+ *	Mikel Solabarrieta (15 feb 2016)
+ */
 public class DesksAndTeams {
 	
 	public static void main(String[] args) {
